@@ -1,0 +1,36 @@
+<scroll-view>
+    <!-- 头部介绍 -->
+    <view>
+        <image src="{{coinObject.image.thumb}}"></image>
+        <view>{{ coinObject.localization.zh }}/{{ coinObject.localization.en }}({{ oinObject.localization.symbol.toUpperCase()}})</view>
+        <view>{{ coinObject.description.zh }}</view>
+    </view>
+
+    <!-- 得分 -->
+    <view>
+        <view>指标总得分:{{ coinObject.coingecko_score }}%</view>
+        <view>开发人员活跃度:{{ coinObject.developer_score }}%</view>
+        <view>社区活跃度:{{ coinObject.community_score }}%</view>
+        <view>交易流动性:{{ coinObject.liquidity_score }}%</view>
+    </view>
+
+    <!-- 开发人员 -->
+    <view>
+        <image src="../../assets/github.png"></image>
+        <view>粉丝(stars):{{ coinObject.developer_data.stars }}</view>
+        <view>分叉(forks):{{ coinObject.developer_data.forks }}</view>
+        <view>合并拉取请求(merged):{{ coinObject.developer_data.pull_requests_merged }}</view>
+        <view>关注(subscribers):{{ coinObject.developer_data.subscribers }}</view>
+        <view>贡献者(contributors):{{ coinObject.developer_data.pull_request_contributors }}</view>
+        <view>已解决问题/问题总数(issues):{{ coinObject.developer_data.closed_issues }}/{{ coinObject.developer_data.total_issues }}</view>
+    </view>
+
+    <!-- 连接 -->
+    <!-- <view>
+        主页:<web-view src="{{ coinObject.links.homepage }}">{{ coinObject.links.homepage }}</web-view>
+        区块浏览器:<web-view src="{{ coinObject.links.blockchain_site[0] }}">{{ coinObject.links.blockchain_site[0] }}</web-view>
+        论坛:<web-view src="{{ coinObject.links.official_forum_url }}">{{ coinObject.links.official_forum_url }}</web-view>
+    </view> -->
+</scroll-view>
+
+
