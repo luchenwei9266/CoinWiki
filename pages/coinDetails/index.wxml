@@ -1,12 +1,12 @@
 <scroll-view class="coin-info-wrap">
     <!-- 头部介绍 -->
     <view style="margin-top:5%">
-        <image src="{{coinObject.image.small}}" class="coin-info-logo" style="width:50px;height:50px"></image>
+        <image src="{{coinObject.image.small}}" class="coin-info-logo"></image>
         <view class="coin-info-name">
           {{ coinObject.localization.zh }}/{{ coinObject.localization.en }}
         </view>
         <view class="cap_rank">市值排名: {{ coinObject.market_cap_rank }}</view>
-        <view class="coin-info-des">{{ coinObject.description.en }}</view>
+        <view class="coin-info-des">{{ coinObject.description.zh }}</view>
     </view>
 
     <!-- 得分 -->

@@ -1,13 +1,30 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/coinDetails/index"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/coinDetails/index",
+        "pages/compared/index",
+        "pages/issue/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [{
+            "pagePath": "pages/index/index",
+            "text": "首页",
+            "iconPath": "assets/first.png"
+        }, {
+            "pagePath": "pages/compared/index",
+            "text": "对比",
+            "iconPath": "assets/compared.png"
+        }, {
+            "pagePath": "pages/issue/index",
+            "text": "常见问题",
+            "iconPath": "assets/issue2.png"
+        }]
+    }
 }

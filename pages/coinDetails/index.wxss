@@ -4,15 +4,14 @@
 }
 
 .coin-info-logo {
-    width: 50px;
-    height: 50px;
-    display: inline-block;
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-right: 5px;
 }
 
 .coin-info-name {
     display: inline-block;
-    vertical-align: top;
-    margin-top: 14px;
     color: #1296db;
 }
 
@@ -96,9 +95,8 @@
 }
 
 .cap_rank {
-    float: right;
     color: green;
     font-size: 31rpx;
     margin-top: 5%;
-    margin-right: 2%;
+    margin-left: 8%;
 }

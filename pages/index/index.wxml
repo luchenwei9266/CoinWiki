@@ -6,7 +6,7 @@
     </block>
   </view>
   <view style="width:100%">
-    <input bindinput="bindInput"  placeholder="请输入想要搜索的币种" type="text" confirm-type="search" class="search-input" placeholder-class="input-place"/>
-    <button type="primary" class="search-button" size="mini" bindtap="goSearch">搜索</button>
+    <input bindinput="bindInput"  bindblur="blurblur" bindconfirm="blurblur" placeholder="请输入想要搜索的币种" type="text" confirm-type="search" class="search-input" placeholder-class="input-place"/>
+    <button type="primary" class="search-button" bindtap="goSearch">搜索</button>
   </view>
 </view>

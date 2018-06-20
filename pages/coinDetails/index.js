@@ -1,4 +1,5 @@
 const URL = 'https://api.coingecko.com/api/v3/coins/';
+const AV = require('../../key.js');
 
 Page({
     data: {
@@ -8,12 +9,17 @@ Page({
 
     onLoad: function(options) {
         if (options.coinId) {
+            wx.showToast({
+                title: options.coinId,
+                icon: 'none',
+                duration: 1000
+            })
             wx.showLoading({ title: '加载中' })
             wx.request({
                 url: URL + options.coinId,
                 success: function(res) {
                     wx.hideLoading();
-                    this.setData({ coinObject });
+                    this.setData({ coinObject: res.data });
                 },
                 fail: function(error) {
                     wx.hideLoading();
@@ -24,20 +30,29 @@ Page({
     },
 
     onShareAppMessage: function(res) {
-        if (res.from === 'button') {
-            // 来自页面内转发按钮
-            console.log(res.target)
-        }
         return {
-            title: this.coinObject.localization.zh + "/" + this.coinObject.localization.en,
-            path: 'pages/coinDetails/index?coinId=' + this.coinObject.localization.id,
-            imageUrl: this.coinObject.image.small
+            title: `${this.data.coinObject.localization.zh}/ ${this.data.coinObject.localization.en}`,
+            path: `pages/coinDetails/index?coinId=${this.data.coinObject.localization.id}`
         }
     },
 
     onShow: function() {
-        let coinObject = wx.getStorageSync("coin");
-        this.setData({ coinObject });
+        wx.getStorage({
+            key: 'coin',
+            success: (coinObject) => {
+                new AV.Query('CoinText').equalTo("symbol", coinObject.data.id).first().then(res => {
+                    if (!res) {
+                        this.setData({ coinObject: coinObject.data });
+                    } else {
+                        res = JSON.parse(JSON.stringify(res));
+                        coinObject.data.description.zh = res.text_zh;
+                        this.setData({ coinObject: coinObject.data });
+                    }
+                }, (err) => {
+                    console.log(err);
+                })
+            }
+        })
     }
 
 })
