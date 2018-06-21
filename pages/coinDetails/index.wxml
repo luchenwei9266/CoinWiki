@@ -13,86 +13,119 @@
     <view class="coin-info-gai view-maggin">
         <view class="coin-info-gai-title">
           <image src="../../assets/gaiyao.png" class="github-logo"></image>
-          <view>概要</view>
+          <view style="display:inline-block">概要</view>
         </view>
-        <view class="line"></view>
+        
+        <view class="line2"></view>
+
         <view class="coin-info-gai-text">
-          <view >指标总得分:</view>
-          <view class="coin-info-gai-sorce">{{ coinObject.coingecko_score }} %</view>
-          <view>开发人员活跃度:</view>
-          <view class="coin-info-gai-sorce">{{ coinObject.developer_score }} %</view>
-          <view>社区活跃度:</view>
-          <view class="coin-info-gai-sorce">{{ coinObject.community_score }} %</view>
-          <view>交易流动性:</view>
-          <view class="coin-info-gai-sorce">{{ coinObject.liquidity_score }} %</view>
+          <view class="item item-left">
+            <view >指标总得分:</view>
+            <view class="coin-info-gai-sorce">{{ coinObject.coingecko_score }} %</view>
+            <view>开发人员活跃度:</view>
+            <view class="coin-info-gai-sorce">{{ coinObject.developer_score }} %</view>
+          </view>
+          <view class="item item-right">
+            <view>社区活跃度:</view>
+            <view class="coin-info-gai-sorce">{{ coinObject.community_score }} %</view>
+            <view>交易流动性:</view>
+            <view class="coin-info-gai-sorce">{{ coinObject.liquidity_score }} %</view>
+          </view>
         </view>
     </view>
 
     <!-- 开发人员 -->
-    <view style="text-align:center" class="view-maggin coin-develop">
-        <view>
+    <view style="text-align:center" class="coin-info-gai view-maggin">
+        <view class="coin-info-gai-title">
           <image src="../../assets/github.png" class="github-logo"></image>
-          <view class="develop-title">开发</view>
+          <view style="display:inline-block">开发</view>
         </view>
+
         <view class="line2"></view>
-        <view>
-          <image src="../../assets/starts.png" class="deveplo-logo"></image>
-          粉丝:<span class="develop-text"> {{ coinObject.developer_data.stars }}</span>
-        </view>
-        <view>
-          <image src="../../assets/fork.png" class="deveplo-logo"></image>
-          分叉:<span class="develop-text"> {{ coinObject.developer_data.forks }}</span>
+
+        <view class="coin-info-gai-text">
+          <view class="item item-left">
+            <view>
+              <image src="../../assets/starts.png" class="deveplo-logo"></image>
+              粉丝:<view class="coin-info-gai-sorce"> {{ coinObject.developer_data.stars }}</view>
+            </view>
+            <view>
+              <image src="../../assets/fork.png" class="deveplo-logo"></image>
+              分叉:<view class="coin-info-gai-sorce"> {{ coinObject.developer_data.forks }}</view>
+              </view>
+            <view>
+              <image src="../../assets/merge.png" class="deveplo-logo"></image>
+              合并拉取请求: <view class="coin-info-gai-sorce"> {{ coinObject.developer_data.pull_requests_merged }}</view>
+            </view>
           </view>
-        <view>
-          <image src="../../assets/merge.png" class="deveplo-logo"></image>
-          合并拉取请求: <span class="develop-text"> {{ coinObject.developer_data.pull_requests_merged }}</span>
-        </view>
-        <view>
-          <image src="../../assets/subscribe.png" class="deveplo-logo"></image>
-          关注:<span class="develop-text"> {{ coinObject.developer_data.subscribers }}</span>
-        </view>
-        <view>
-          <image src="../../assets/contributors.png" class="deveplo-logo"></image>
-          贡献者:<span class="develop-text"> {{ coinObject.developer_data.pull_request_contributors }}</span>
-        </view>
-        <view>
-          <image src="../../assets/issue.png" class="deveplo-logo"></image>
-          已解决问题/问题总数:<span class="develop-text"> {{ coinObject.developer_data.closed_issues }} / {{ coinObject.developer_data.total_issues }}</span>
+
+          <view class="item item-right">
+            <view>
+              <image src="../../assets/subscribe.png" class="deveplo-logo"></image>
+              关注:<view class="coin-info-gai-sorce"> {{ coinObject.developer_data.subscribers }}</view>
+            </view>
+            <view>
+              <image src="../../assets/contributors.png" class="deveplo-logo"></image>
+              贡献者:<view class="coin-info-gai-sorce"> {{ coinObject.developer_data.pull_request_contributors }}</view>
+            </view>
+            <view>
+              <image src="../../assets/issue.png" class="deveplo-logo"></image>
+              已解决问题/问题总数:<view class="coin-info-gai-sorce"> {{ coinObject.developer_data.closed_issues }} / {{ coinObject.developer_data.total_issues }}</view>
+            </view>
+          </view>
         </view>
     </view>
 
     <!-- 社区 -->
   <view style="text-align:center" class="view-maggin coin-develop">
-        <view>
+        <view class="coin-info-gai-title">
           <image src="../../assets/shequ.png" class="github-logo"></image>
-          <view class="develop-title">社区</view>
+          <view style="display:inline-block">社区</view>
         </view>
+
         <view class="line2"></view>
-        <view>
-          <image src="../../assets/reddit.png" class="deveplo-logo"></image>
-          Reddit用户 :<span class="develop-text"> {{ coinObject.community_data.reddit_subscribers }}</span>
-        </view>
-        <view>
-          <image src="../../assets/reddit.png" class="deveplo-logo"></image>
-          平均在线用户:<span class="develop-text"> {{ coinObject.community_data.reddit_accounts_active_48h }}</span>
+
+        <view class="coin-info-gai-text">
+          <view class="item item-left">
+            <view>
+              <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+              Reddit用户 :<view class="coin-info-gai-sorce"> {{ coinObject.community_data.reddit_subscribers }}</view>
+            </view>
+
+            <view>
+              <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+              平均在线用户:<view class="coin-info-gai-sorce"> {{ coinObject.community_data.reddit_accounts_active_48h }}</view>
+              </view>
+
+            <view>
+              <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+              平均每小时新增热帖: <view class="coin-info-gai-sorce"> {{ coinObject.community_data.reddit_average_posts_48h }}</view>
+            </view>
           </view>
-        <view>
-          <image src="../../assets/reddit.png" class="deveplo-logo"></image>
-          平均每小时新增热帖: <span class="develop-text"> {{ coinObject.community_data.reddit_average_posts_48h }}</span>
-        </view>
-        <view>
-          <image src="../../assets/reddit.png" class="deveplo-logo"></image>
-          平均每小时热帖新增评论:<span class="develop-text"> {{ coinObject.community_data.reddit_average_comments_48h }}</span>
-        </view>
-        <view>
-          <image src="../../assets/twiter.png" class="deveplo-logo"></image>
-          Twitter Followers:<span class="develop-text"> {{ coinObject.community_data.twitter_followers }}</span>
-        </view>
-        <view>
-          <image src="../../assets/FaceBook.png" class="deveplo-logo"></image>
-          Facebook Likes:<span class="develop-text"> {{ coinObject.community_data.facebook_likes}}</span>
+
+        <view class="item item-right">
+          <view>
+            <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+            每小时热帖新增评论:<view class="coin-info-gai-sorce"> {{ coinObject.community_data.reddit_average_comments_48h }}</view>
+          </view>
+
+          <view>
+            <image src="../../assets/twiter.png" class="deveplo-logo"></image>
+            Twitter Followers:<view class="coin-info-gai-sorce"> {{ coinObject.community_data.twitter_followers }}</view>
+          </view>
+
+          <view>
+            <image src="../../assets/FaceBook.png" class="deveplo-logo"></image>
+            Facebook Likes:<view class="coin-info-gai-sorce"> {{ coinObject.community_data.facebook_likes}}</view>
+          </view>
+
         </view>
     </view>
+    </view>
+
+
+    <button type="primary" bindtap="joinCompared">加入币种对比</button>
+
 </scroll-view>
 
 

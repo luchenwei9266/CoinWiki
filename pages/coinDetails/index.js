@@ -53,6 +53,56 @@ Page({
                 })
             }
         })
-    }
+    },
 
+    joinCompared: function() {
+        wx.getStorage({
+            key: 'comparedCoin',
+            success: (coinList) => {
+                if (coinList.data.length == 0 || coinList.data.length == 1) {
+                    coinList.data.push(this.data.coinObject);
+                    wx.setStorage({
+                        key: "comparedCoin",
+                        data: coinList.data,
+                        success: function(data) {
+                            wx.showToast({
+                                title: '加入成功',
+                                icon: 'success',
+                                duration: 1000
+                            })
+                        }
+                    })
+                }
+                if (coinList.data.length == 2) {
+                    coinList.data[1] = this.data.coinObject;
+                    wx.setStorage({
+                        key: "comparedCoin",
+                        data: coinList.data,
+                        success: function(data) {
+                            wx.showToast({
+                                title: '加入成功',
+                                icon: 'success',
+                                duration: 1000
+                            })
+                        }
+                    })
+                }
+            },
+            fail: () => {
+                let coinList = [];
+                coinList.push(this.data.coinObject);
+                wx.setStorage({
+                    key: "comparedCoin",
+                    data: coinList,
+                    success: function(data) {
+                        wx.showToast({
+                            title: '加入成功',
+                            icon: 'success',
+                            duration: 1000
+                        })
+                    }
+                })
+            }
+        })
+    }
 })

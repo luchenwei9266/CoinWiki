@@ -1,1 +1,174 @@
-<view>这是对比页</view>
+<scroll-view>
+
+  <view wx:if="{{!coinOrigin.id}}" class="no-info">您暂未添加币种，请添加完再查看</view>
+  
+  <view wx:else>
+    <view class="title">币种对比</view>
+
+    <!-- 左  -->
+    <view class="compared-wrap left" style="border-right:1px solid #eee">
+        <view style="text-align:center">
+            <view class="coin-info-name">{{ coinOrigin.localization.en }}</view>
+            <view class="cap_rank">市值排名 {{ coinOrigin.market_cap_rank }}</view>
+        </view>
+
+        <view class="small-title">概要</view>
+
+        <!-- 得分 -->
+        <view style="text-align:center" class="coin-info-gai view-maggin">
+            <view class="coin-info-gai-text">
+              <view >指标总得分</view>
+              <view class="coin-info-gai-sorce">{{ coinOrigin.coingecko_score }} %</view>
+              <view>开发人员活跃度</view>
+              <view class="coin-info-gai-sorce">{{ coinOrigin.developer_score }} %</view>
+              <view>社区活跃度</view>
+              <view class="coin-info-gai-sorce">{{ coinOrigin.community_score }} %</view>
+              <view>交易流动性</view>
+              <view class="coin-info-gai-sorce">{{ coinOrigin.liquidity_score }} %</view>
+            </view>
+        </view>
+
+        <view class="small-title">开发</view>
+
+        <!-- 开发人员 -->
+        <view style="text-align:center" class="view-maggin coin-develop">
+            <view>
+              <image src="../../assets/starts.png" class="deveplo-logo"></image>
+              粉丝<view class="develop-text"> {{ coinOrigin.developer_data.stars }}</view>
+            </view>
+            <view>
+              <image src="../../assets/fork.png" class="deveplo-logo"></image>
+              分叉<view class="develop-text"> {{ coinOrigin.developer_data.forks }}</view>
+              </view>
+            <view>
+              <image src="../../assets/merge.png" class="deveplo-logo"></image>
+              合并拉取请求 <view class="develop-text"> {{ coinOrigin.developer_data.pull_requests_merged }}</view>
+            </view>
+            <view>
+              <image src="../../assets/subscribe.png" class="deveplo-logo"></image>
+              关注<view class="develop-text"> {{ coinOrigin.developer_data.subscribers }}</view>
+            </view>
+            <view>
+              <image src="../../assets/contributors.png" class="deveplo-logo"></image>
+              贡献者<view class="develop-text"> {{ coinOrigin.developer_data.pull_request_contributors }}</view>
+            </view>
+            <view>
+              <image src="../../assets/issue.png" class="deveplo-logo"></image>
+              已解决问题/问题总数<view class="develop-text"> {{ coinOrigin.developer_data.closed_issues }} / {{ coinOrigin.developer_data.total_issues }}</view>
+            </view>
+        </view>
+
+        <view class="small-title">社区</view>
+        <!-- 社区 -->
+      <view class="view-maggin coin-develop">
+            <view>
+              <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+              Reddit用户 <view class="develop-text"> {{ coinOrigin.community_data.reddit_subscribers }}</view>
+            </view>
+            <view>
+              <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+              平均在线用户<view class="develop-text"> {{ coinOrigin.community_data.reddit_accounts_active_48h }}</view>
+              </view>
+            <view>
+              <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+              平均每小时新增热帖 <view class="develop-text"> {{ coinOrigin.community_data.reddit_average_posts_48h }}</view>
+            </view>
+            <view>
+              <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+              平均每小时热帖新增评论<view class="develop-text"> {{ coinOrigin.community_data.reddit_average_comments_48h }}</view>
+            </view>
+            <view>
+              <image src="../../assets/twiter.png" class="deveplo-logo"></image>
+              Twitter Followers<view class="develop-text"> {{ coinOrigin.community_data.twitter_followers }}</view>
+            </view>
+            <view>
+              <image src="../../assets/FaceBook.png" class="deveplo-logo"></image>
+              Facebook Likes<view class="develop-text"> {{ coinOrigin.community_data.facebook_likes}}</view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 右  -->
+    <view class="compared-wrap" wx:if="{{coinTarget.id}}">
+
+      <view style="text-align:center">
+            <view class="coin-info-name">{{ coinTarget.localization.en }}</view>
+            <view class="cap_rank">市值排名 {{ coinTarget.market_cap_rank }}</view>
+      </view>
+          <view class="small-title">概要</view>
+        <!-- 得分 -->
+        <view style="text-align:center" class="coin-info-gai view-maggin">
+
+            <view class="coin-info-gai-text">
+                <view >指标总得分</view>
+                <view class="coin-info-gai-sorce">{{ coinTarget.coingecko_score }} %</view>
+                <view>开发人员活跃度</view>
+                <view class="coin-info-gai-sorce">{{ coinTarget.developer_score }} %</view>
+                <view>社区活跃度</view>
+                <view class="coin-info-gai-sorce">{{ coinTarget.community_score }} %</view>
+                <view>交易流动性</view>
+                <view class="coin-info-gai-sorce">{{ coinTarget.liquidity_score }} %</view>
+            </view>
+        </view>
+
+        <view class="small-title">开发</view>
+        <!-- 开发人员 -->
+        <view style="text-align:center" class="view-maggin coin-develop">
+            <view>
+              <image src="../../assets/starts.png" class="deveplo-logo"></image>
+              粉丝<view class="develop-text"> {{ coinTarget.developer_data.stars }}</view>
+            </view>
+            <view>
+              <image src="../../assets/fork.png" class="deveplo-logo"></image>
+              分叉<view class="develop-text"> {{ coinTarget.developer_data.forks }}</view>
+              </view>
+            <view>
+              <image src="../../assets/merge.png" class="deveplo-logo"></image>
+              合并拉取请求 <view class="develop-text"> {{ coinTarget.developer_data.pull_requests_merged }}</view>
+            </view>
+            <view>
+              <image src="../../assets/subscribe.png" class="deveplo-logo"></image>
+              关注<view class="develop-text"> {{ coinTarget.developer_data.subscribers }}</view>
+            </view>
+            <view>
+              <image src="../../assets/contributors.png" class="deveplo-logo"></image>
+              贡献者<view class="develop-text"> {{ coinTarget.developer_data.pull_request_contributors }}</view>
+            </view>
+            <view>
+              <image src="../../assets/issue.png" class="deveplo-logo"></image>
+              已解决问题/问题总数<view class="develop-text"> {{ coinTarget.developer_data.closed_issues }} / {{ coinTarget.developer_data.total_issues }}</view>
+            </view>
+        </view>
+        <view class="small-title">社区</view>
+        <!-- 社区 -->
+      <view class="view-maggin coin-develop">
+            <view>
+              <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+              Reddit用户 <view class="develop-text"> {{ coinTarget.community_data.reddit_subscribers }}</view>
+            </view>
+            <view>
+              <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+              平均在线用户<view class="develop-text"> {{ coinTarget.community_data.reddit_accounts_active_48h }}</view>
+              </view>
+            <view>
+              <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+              平均每小时新增热帖 <view class="develop-text"> {{ coinTarget.community_data.reddit_average_posts_48h }}</view>
+            </view>
+            <view>
+              <image src="../../assets/reddit.png" class="deveplo-logo"></image>
+              平均每小时热帖新增评论<view class="develop-text"> {{ coinTarget.community_data.reddit_average_comments_48h }}</view>
+            </view>
+            <view>
+              <image src="../../assets/twiter.png" class="deveplo-logo"></image>
+              Twitter Followers<view class="develop-text"> {{ coinTarget.community_data.twitter_followers }}</view>
+            </view>
+            <view>
+              <image src="../../assets/FaceBook.png" class="deveplo-logo"></image>
+              Facebook Likes<view class="develop-text"> {{ coinTarget.community_data.facebook_likes}}</view>
+            </view>
+        </view>
+      </view>
+
+    <button type="primary" bindtap="clearCompared" class="reset-button">重置对比币种</button>
+  </view>
+</scroll-view>

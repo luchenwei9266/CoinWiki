@@ -16,25 +16,18 @@
 }
 
 .coin-info-gai {
-    display: flex;
     align-content: center;
 }
 
-.line {
-    width: 1px;
-    height: 420rpx;
-    background: #bfbfbf;
-}
-
 .coin-info-gai-title {
-    display: flex;
-    width: 48%;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 5% 0;
 }
 
 .coin-info-gai-text {
-    width: 50%;
+    width: 100%;
     text-align: center;
     font-size: 31rpx;
 }
@@ -54,7 +47,7 @@
 .line2 {
     width: 100%;
     height: 1px;
-    background: #bfbfbf;
+    background: #eee;
     margin: 8rpx 0;
     padding: 0 !important;
 }
@@ -75,10 +68,10 @@
     font-size: 28rpx;
     color: green;
     padding: 15rpx 0;
+    border-bottom: 1px solid #eee;
 }
 
 .coin-develop view {
-    padding: 15rpx 0;
     font-size: 31rpx;
     vertical-align: middle;
 }
@@ -99,4 +92,19 @@
     font-size: 31rpx;
     margin-top: 5%;
     margin-left: 8%;
+}
+
+.item {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+
+.item-left {
+    width: 49%;
+    border-right: 1px solid #eee;
+}
+
+.item view {
+    margin: 15rpx 0 0 0;
 }

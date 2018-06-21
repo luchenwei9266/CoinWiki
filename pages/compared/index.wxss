@@ -1,0 +1,116 @@
+.compared-wrap {
+    width: 50%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+
+.coin-info-wrap {
+    width: 95%;
+    margin: 2% 2.5%;
+}
+
+.coin-info-logo {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.coin-info-name {
+    display: inline-block;
+    color: #1296db;
+}
+
+.coin-info-gai {
+    display: inline-block;
+    align-content: center;
+}
+
+.line {
+    width: 1px;
+    height: 420rpx;
+    background: #bfbfbf;
+}
+
+.coin-info-gai-title {
+    display: flex;
+    width: 48%;
+    align-items: center;
+    justify-content: center;
+}
+
+.coin-info-gai-text {
+    width: 100%;
+    text-align: center;
+    font-size: 31rpx;
+    vertical-align: top;
+}
+
+.github-logo {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-right: 10rpx;
+}
+
+.view-maggin {
+    margin: 8% 0;
+}
+
+.coin-info-gai-sorce {
+    font-size: 28rpx;
+    color: green;
+    padding: 15rpx 0;
+}
+
+.coin-develop view {
+    padding: 15rpx 0;
+    font-size: 31rpx;
+}
+
+.develop-text {
+    color: green;
+}
+
+.deveplo-logo {
+    width: 18px;
+    height: 18px;
+    margin-right: 3rpx;
+    vertical-align: text-bottom;
+}
+
+.cap_rank {
+    color: green;
+    font-size: 31rpx;
+}
+
+.no-info {
+    text-align: center;
+    font-size: 31rpx;
+    margin-top: 2%;
+}
+
+.title {
+    text-align: center;
+    font-size: 50rpx;
+    margin: 4%;
+}
+
+.left {
+    width: 49%;
+}
+
+.small-title {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    margin-top: 3%;
+    color: #1296db;
+}
+
+.reset-button {
+    width: 95%;
+    margin: 4% 2.5%;
+}
