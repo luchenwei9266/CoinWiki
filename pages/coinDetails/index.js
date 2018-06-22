@@ -1,4 +1,3 @@
-const URL = 'https://api.coingecko.com/api/v3/coins/';
 const AV = require('../../key.js');
 
 Page({
@@ -9,23 +8,14 @@ Page({
 
     onLoad: function(options) {
         if (options.coinId) {
-            wx.showToast({
-                title: options.coinId,
-                icon: 'none',
-                duration: 1000
-            })
-            wx.showLoading({ title: '加载中' })
-            wx.request({
-                url: URL + options.coinId,
-                success: function(res) {
-                    wx.hideLoading();
-                    this.setData({ coinObject: res.data });
-                },
-                fail: function(error) {
-                    wx.hideLoading();
-                    console.log(error);
-                }
-            })
+            wx.showLoading({ title: '加载中' });
+            new AV.Query('CoinsAllInfo').equalTo("id", options.coinId).first().then(res => {
+                this.setData({ coinObject: res.attributes.data });
+                wx.hideLoading();
+            }, err => {
+                wx.hideLoading();
+                console.log(error);
+            });
         }
     },
 

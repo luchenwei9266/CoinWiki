@@ -2,7 +2,6 @@
 //获取应用实例
 const app = getApp()
 const AV = require('../../key.js');
-const URL = 'https://api.coingecko.com/api/v3/coins/';
 
 Page({
     data: {
@@ -32,52 +31,23 @@ Page({
 
             return false;
         } else {
-            let data = this.data.coinList[this.data.inputValue];
-
+            let data = this.data.coinList[this.data.inputValue] ? this.data.coinList[this.data.inputValue] : this.data.inputValue;
             wx.showLoading({ title: '加载中' })
-            if (data) {
-                wx.request({
-                    url: URL + data,
-                    success: function(res) {
+            new AV.Query('CoinsAllInfo').equalTo("id", data).first().then(res => {
+                wx.setStorage({
+                    key: "coin",
+                    data: res.attributes.data,
+                    success: function(data) {
                         wx.hideLoading();
-                        wx.setStorage({
-                            key: "coin",
-                            data: res.data,
-                            success: function(data) {
-                                wx.navigateTo({
-                                    url: '../coinDetails/index'
-                                });
-                            }
-                        })
-                    },
-                    fail: function(error) {
-                        wx.hideLoading();
-                        console.log(error);
+                        wx.navigateTo({
+                            url: '../coinDetails/index'
+                        });
                     }
                 })
-            } else {
-                wx.request({
-                    url: URL + this.data.inputValue,
-                    success: function(res) {
-                        wx.hideLoading();
-                        wx.setStorage({
-                            key: "coin",
-                            data: res.data,
-                            success: function(data) {
-                                setTimeout(() => {
-                                    wx.navigateTo({
-                                        url: '../coinDetails/index'
-                                    });
-                                }, 500)
-                            }
-                        })
-                    },
-                    fail: function(error) {
-                        wx.hideLoading();
-                        console.log(error);
-                    }
-                })
-            }
+            }, err => {
+                wx.hideLoading();
+                console.log(error);
+            })
         }
     },
 
