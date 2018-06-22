@@ -1,1 +1,16 @@
-<view>这是问题页</view>
+<view class="issue-wrap">
+  <view class="title">常见问题</view>
+  <view class="quesion">1.为什么搜索不到我想要的币种？</view>
+  <view class="answer">可以尝试一下用全名当作关键字搜索，比如BTC的全名是bitcoin，换这个方式如果还是搜索不到，抱歉，那可能暂时真的没有了。</view>
+  <view class="quesion">2.为什么币种的资料介绍看起来那么怪？</view>
+  <view class="answer">因为介绍是Google翻译出来的，一个人做项目没办法，见谅见谅</view>
+  <view class="quesion">3.币种的得分怎么来的，是你们团队定义的吗？</view>
+  <view class="answer">不是我们团队定义的，所有数据都是来自第三方网站的API提供的数据。</view>
+  <view class="quesion">4.为什么没有价格显示，以后会加该功能吗？</view>
+  <view class="answer">不会，因为某些不可说的原因，希望你懂的。</view>
+  <view class="quesion">5.这个小程序有什么用？</view>
+  <view class="answer">大概的作用应该就是给你参考判断一下是不是传销币吧，当然这些指标并不能决定一个项目好坏，是否为空气币。更多的还是需要自己去深层次的去了解，这个仅仅是给你一下参考</view>
+  <view class="quesion">6.打个广告？</view>
+  <view class="answer">好滴，章鱼财经正在招兵买马，欢迎各位技术大佬发简历。钱多，环境好，大佬多，特别缺区块链人才！！!(如果发现本程序有bug,或者有更好的想法,欢迎联系!)</view>
+  <view class="quesion" style="margin-bottom:20rpx;">Email：naima@onda.com.cn</view>
+</view>

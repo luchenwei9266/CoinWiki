@@ -64,9 +64,11 @@ Page({
                             key: "coin",
                             data: res.data,
                             success: function(data) {
-                                wx.navigateTo({
-                                    url: '../coinDetails/index'
-                                });
+                                setTimeout(() => {
+                                    wx.navigateTo({
+                                        url: '../coinDetails/index'
+                                    });
+                                }, 500)
                             }
                         })
                     },

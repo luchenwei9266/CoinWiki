@@ -1,0 +1,24 @@
+.issue-wrap {
+    width: 92%;
+    margin: 0 4%;
+}
+
+.quesion {
+    font-size: 35rpx;
+    line-height: 53rpx;
+    font-weight: bold;
+}
+
+.answer {
+    font-size: 28rpx;
+    line-height: 53rpx;
+    margin: 3% 0%;
+    color: #565555;
+}
+
+.title {
+    text-align: center;
+    width: 100%;
+    font-size: 50rpx;
+    margin: 5% 0;
+}
