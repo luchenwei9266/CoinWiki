@@ -34,16 +34,24 @@ Page({
             let data = this.data.coinList[this.data.inputValue] ? this.data.coinList[this.data.inputValue] : this.data.inputValue;
             wx.showLoading({ title: '加载中' })
             new AV.Query('CoinsAllInfo').equalTo("id", data).first().then(res => {
-                wx.setStorage({
-                    key: "coin",
-                    data: res.attributes.data,
-                    success: function(data) {
-                        wx.hideLoading();
-                        wx.navigateTo({
-                            url: '../coinDetails/index'
-                        });
-                    }
-                })
+                if (res) {
+                    wx.setStorage({
+                        key: "coin",
+                        data: res.attributes.data,
+                        success: function(data) {
+                            wx.hideLoading();
+                            wx.navigateTo({
+                                url: '../coinDetails/index'
+                            });
+                        }
+                    })
+                } else {
+                    wx.showToast({
+                        title: '没有查找到该币种，请尝试输入全名后再查询！',
+                        icon: 'none',
+                        duration: 1500
+                    })
+                }
             }, err => {
                 wx.hideLoading();
                 console.log(error);
