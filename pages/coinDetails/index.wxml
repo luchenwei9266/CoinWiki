@@ -125,6 +125,8 @@
 
 
     <button type="primary" bindtap="joinCompared">加入币种对比</button>
+    <button type="primary" open-type="feedback" style="margin-top:10px;">意见反馈</button>
+
 
 </scroll-view>
 
